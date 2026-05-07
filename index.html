@@ -272,6 +272,20 @@
   .img-placeholder-text { font-size: 13px; font-weight: 500; letter-spacing: 0.5px; }
   .img-placeholder-hint { font-size: 11px; color: var(--ink-mute); margin-top: 4px; }
 
+  .toc-interior-mockup {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(15, 29, 51, 0.12);
+  }
+  .toc-interior-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: top;
+  }
+
   /* SECTION BASE */
   section { padding: 90px 0; }
   .section-eyebrow {
@@ -1177,13 +1191,17 @@
       </div>
     </div>
 
-    <!-- IMAGE PLACEHOLDER FOR PRODUCT INTERIOR -->
+    <!-- Mockup páginas internas do e-book -->
     <div style="margin-top: 60px;">
-      <div class="img-placeholder" style="aspect-ratio: 16/7; max-width: 900px; margin: 0 auto;">
-        <div class="img-placeholder-icon">📖</div>
-        <div class="img-placeholder-text">IMAGEM DAS PÁGINAS INTERNAS DO E-BOOK</div>
-        <div class="img-placeholder-hint">(adicionar mockup mostrando capítulos diagramados)</div>
-      </div>
+      <figure class="toc-interior-mockup">
+        <img
+          src="https://raw.githubusercontent.com/ATIVBRASIL/guia-conformidade-condominios/refs/heads/main/pag_interna.png"
+          alt="Páginas internas do e-book Guia de Conformidade — capítulos diagramados"
+          width="1920"
+          height="840"
+          loading="lazy"
+          decoding="async">
+      </figure>
     </div>
   </div>
 </section>
