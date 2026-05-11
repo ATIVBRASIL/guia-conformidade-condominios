@@ -688,10 +688,75 @@
   .author { background: var(--paper); }
   .author-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 260px 1fr 1.1fr;
+    gap: 48px;
+    align-items: start;
     margin-top: 30px;
+  }
+  .author-photo {
+    position: sticky;
+    top: 30px;
+  }
+  .author-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--navy);
+    box-shadow: 0 12px 40px rgba(15, 29, 51, 0.18);
+  }
+  .author-photo-frame::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    z-index: 2;
+  }
+  .author-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .author-photo-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: var(--navy);
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
+  }
+  .author-photo-badge-num {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .author-photo-badge-text {
+    font-size: 12px;
+    color: #B0BFD8;
+    line-height: 1.4;
+  }
+  .author-photo-badge-text strong {
+    display: block;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
   }
   .author-card {
     background: var(--bg);
@@ -922,7 +987,28 @@
     .stack-item-value { text-align: left; }
     .stack-total-price { font-size: 64px; }
     .stack-total-price-suffix { font-size: 28px; }
-    .author-grid { grid-template-columns: 1fr; gap: 40px; }
+    .author-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .author-photo {
+      position: static;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+    .author-photo-frame {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+    .author-photo-frame::after {
+      display: none;
+    }
+    .author-photo-badge {
+      justify-content: center;
+    }
+    .author-photo-badge-text {
+      text-align: left;
+    }
     .guarantee-text { font-size: 22px; }
     .final-cta h2 { font-size: 30px; }
   }
@@ -1328,6 +1414,22 @@
     <p class="section-lead">É um material escrito por quem viveu a operação de segurança no campo, conhece governança e compliance, e construiu sua autoridade na prática — não em sala de aula.</p>
 
     <div class="author-grid">
+      <div class="author-photo">
+        <div class="author-photo-frame">
+          <img
+            src="https://raw.githubusercontent.com/ATIVBRASIL/guia-conformidade-condominios/refs/heads/main/EuWhts.png"
+            alt="Alex Andreoli Dantas — Instrutor credenciado pela Polícia Federal"
+            loading="lazy"
+            decoding="async">
+        </div>
+        <div class="author-photo-badge">
+          <div class="author-photo-badge-num">PF</div>
+          <div class="author-photo-badge-text">
+            <strong>Credenciado</strong>
+            Polícia Federal · nº 89/2026
+          </div>
+        </div>
+      </div>
       <div class="author-card">
         <div class="author-name">Alex Andreoli Dantas</div>
         <div class="author-title">Product Engineer  •  ATIV Brasil</div>
